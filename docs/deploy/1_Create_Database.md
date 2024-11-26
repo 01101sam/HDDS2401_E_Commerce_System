@@ -31,7 +31,7 @@ Follow the following configuration (must match with the table below):
 | Database name | `ecom_db` |
 | Collection id | `user`    |
 
-![img.png](img/step_1/img.png)
+![img.png](img/step_1/4.png)
 
 Click `OK`
 

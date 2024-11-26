@@ -108,7 +108,7 @@ Switch `Azure portal` tab and follow the instructions, but region has to be `Eas
 
 ![img.png](img/step_3/3.png)
 
-Note down `Hostname`, add it back to `.env` file as `ENDPOINT`.
+Note down `Hostname`, we will use it as `ENDPOINT` later.
 
 ![img.png](img/step_3/4.png)
 
@@ -118,7 +118,7 @@ Go `Review + create` and `Create`.
 
 Go to our app at `App Service` -> `Settings` -> `Environment variables` and add the following variables:
 
-| .env Key                          | Value                                       |
+| Environment Key                   | Value                                       |
 |-----------------------------------|---------------------------------------------|
 | `MONGODB_URL`                     | `Primary Connection String`                 |
 | `AZURE_STORAGE_CONNECTION_STRING` | `Connection String`                         |
