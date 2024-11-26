@@ -110,12 +110,10 @@ The e-commerce API backend provides the following features:
 
 ## Prerequisites
 
-- Ubuntu 20.04 LTS (or newer)
-- Python 3.10+
-- MongoDB (In this case, Azure Database for MySQL is used)
+- Azure Account
 
 To install and run the student management system, follow these steps:
 
-## Azure Setup
-
-> Please read our report for detailed instructions on setting up this project infrastructure on Azure.
+1. [Create Database](docs/deploy/1_Create_Database.md)
+2. [Create Blob](docs/deploy/2_Create_Blob.md)
+3. [Deploy API Backend](docs/deploy/3_Deploy_API_Backend.md)
