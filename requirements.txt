@@ -1,0 +1,31 @@
+# Pre-requisite
+wheel
+setuptools
+
+# Environment
+python-dotenv
+
+# HTTP Framework
+fastapi
+gunicorn
+uvicorn
+
+# HTTP Dependency
+pydantic
+python-multipart
+# Email validation
+email-validator
+
+# ORM
+motor
+odmantic
+dnspython  # Use with DNS SRV records
+certifi  # Use with TLS/SSL
+
+# Security
+pyjwt
+passlib
+bcrypt
+
+# Media upload
+azure-storage-blob
