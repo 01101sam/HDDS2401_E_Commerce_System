@@ -1,4 +1,4 @@
-# Azure Azure Cosmos DB (MongoDB)
+# Azure Cosmos DB (MongoDB)
 
 Page: https://portal.azure.com/#browse/Microsoft.DocumentDb%2FdatabaseAccounts
 
@@ -12,11 +12,13 @@ Click `Request unit (RU) database account`
 
 ![img.png](img/step_1/2.png)
 
+![img.png](img/step_1/3.png)
+
 Go `Review + create`, click `Create`
 
 ## Step 2 - Copy Connection String
 
-![img.png](img/step_1/3.png)
+![img.png](img/step_1/4.png)
 
 Note down `Primary Connection String`. We'll use it later.
 
@@ -31,7 +33,7 @@ Follow the following configuration (must match with the table below):
 | Database name | `ecom_db` |
 | Collection id | `user`    |
 
-![img.png](img/step_1/4.png)
+![img.png](img/step_1/5.png)
 
 Click `OK`
 

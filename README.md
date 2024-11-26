@@ -112,7 +112,7 @@ The e-commerce API backend provides the following features:
 
 - Azure Account
 
-To install and run the student management system, follow these steps:
+To install and run the e-Commerce system, follow these steps:
 
 1. [Create Database](docs/deploy/1_Create_Database.md)
 2. [Create Blob](docs/deploy/2_Create_Blob.md)
