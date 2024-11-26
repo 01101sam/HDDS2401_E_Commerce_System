@@ -17,15 +17,16 @@ async def lifespan(_: FastAPI):
     yield
 
 
-app = FastAPI(debug=False, lifespan=lifespan)
+# app = FastAPI(debug=True, lifespan=lifespan)
+app = FastAPI(debug=True)
 app.add_middleware(GZipMiddleware, minimum_size=1024, compresslevel=5)  # noqa
 app.include_router(auth.router)
 app.include_router(checkout.router)
 
 for router in (
-        product.router, order.router, review.router, category.router,
+        product.router,order.router,review.router,category.router,
         cart.router, account.router, shipping.router, address.router,
-        media.router
+        media.router,
 ):
     app.include_router(router, dependencies=[Depends(oauth_check_dep), Depends(role_customer)])
 
