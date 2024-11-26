@@ -18,8 +18,8 @@
 | Values                      | Source                                  |
 |-----------------------------|-----------------------------------------|
 | `Primary Connection String` | [Create Database](1_Create_Database.md) |
-| `Container Name`            | [Create Blob](2_Create_Blob.md)         |
-| `Connection String`         | [Create Blob](2_Create_Blob.md)         |
+| `Container Name`            | [Create Blob](2_Create_Blob_Storage)         |
+| `Connection String`         | [Create Blob](2_Create_Blob_Storage)         |
 
 # Placeholder names
 
@@ -132,6 +132,8 @@ Go to our app at `App Service` -> `Settings` -> `Environment variables` and add 
 
 Remember to replace your endpoint with the one you just created.
 
+Also, note down `ENDPOINT`, we will use it later.
+
 ![img.png](img/step_3/7.png)
 
 Click `Apply` -> `Confirm` to save the changes.
@@ -152,3 +154,10 @@ guide: [Configure managed identity and webhook](https://learn.microsoft.com/en-u
 > Path: `Settings` -> `Configuration`
 
 ![img.png](img/step_3/6.png)
+
+# Recap
+
+- We created a resource group and Azure Container Registry.
+- We built the image in Azure Container Registry.
+- We created an App Service and updated the environment variables.
+- Note down `ENDPOINT`
