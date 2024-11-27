@@ -5,17 +5,6 @@
 This is a simple e-Commerce API backend that provides endpoints for managing products, orders, and users. It is built
 using Python and the FastAPI framework, with asynchronous operations for high performance.
 
-# Live Demo
-
-The application is deployed on Azure and can be accessed at the following URL:
-
-- <https://hdds2401-ecom-api.azurewebsites.net>
-
-When login credentials are requested, use the following (case-sensitive):
-
-- Username: demo@hkbu.edu.hk
-- Password: 2024HDDS2401
-
 # Develop Approach
 
 The software is developed using the following approach:
@@ -112,8 +101,4 @@ The e-commerce API backend provides the following features:
 
 - Azure Account
 
-To install and run the e-Commerce system, follow these steps:
-
-1. [Create Database](docs/deploy/1_Create_Database.md)
-2. [Create Blob](docs/deploy/2_Create_Blob.md)
-3. [Deploy API Backend](docs/deploy/3_Deploy_API_Backend)
+To install and run the e-Commerce system, follow documentation in the `docs` folder.
