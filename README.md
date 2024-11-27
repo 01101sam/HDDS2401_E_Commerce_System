@@ -116,4 +116,4 @@ To install and run the e-Commerce system, follow these steps:
 
 1. [Create Database](docs/deploy/1_Create_Database.md)
 2. [Create Blob](docs/deploy/2_Create_Blob.md)
-3. [Deploy API Backend](docs/deploy/3_Deploy_API_Backend.md)
+3. [Deploy API Backend](docs/deploy/3_Deploy_API_Backend)

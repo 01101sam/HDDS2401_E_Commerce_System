@@ -7,6 +7,8 @@ from odmantic import AIOEngine
 
 load_dotenv()
 
+DEBUG = os.getenv('DEBUG', 'false').lower() == 'true'
+
 # region JWT
 ALGORITHM = "HS256"
 SECRET_KEY = os.getenv('JWT_SECRET')
@@ -22,7 +24,6 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 # Media
 BLOB_CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 BLOB_CONTAINER_NAME = os.getenv("AZURE_STORAGE_CONTAINER_NAME")
-API_ENDPOINT = os.getenv("ENDPOINT")
 
 # Auth
 ALLOW_REGISTRATION = os.getenv("ALLOW_REGISTRATION", "true").lower() == "true"
@@ -33,7 +34,6 @@ for var in (
         "DATABASE_URL",
         "AZURE_STORAGE_CONNECTION_STRING",
         "AZURE_STORAGE_CONTAINER_NAME",
-        "ENDPOINT",
         "ALLOW_REGISTRATION",
         "ALLOW_CHANGE_PASSWORD"
 ):

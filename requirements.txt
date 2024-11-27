@@ -7,7 +7,6 @@ python-dotenv
 
 # HTTP Framework
 fastapi
-gunicorn
 uvicorn
 
 # HTTP Dependency
@@ -29,3 +28,6 @@ bcrypt
 
 # Media upload
 azure-storage-blob
+
+# Deploy to Azure Functions
+azure-functions

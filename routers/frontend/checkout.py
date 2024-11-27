@@ -8,7 +8,7 @@ from pydantic import BaseModel
 
 from dependencies.oauth import oauth_check_dep
 from dependencies.roles import role_customer
-from globals import engine, API_ENDPOINT
+from globals import engine
 from models import (Cart, CartItem, Payment, PaymentGateway, PaymentStatus, Order, OrderStatus, OrderItem,
                     Address, Product, ProductStatus)
 
@@ -173,12 +173,12 @@ async def create_payment(
             order.expire_date = None  # Feature: Clear cron task
             order.status = OrderStatus.PROCESSING
             await engine.save(order)
-            return {"redirect_url": f"{API_ENDPOINT}/order/{cart_id}"}
+            return {"redirect_url": f"/api/order/{cart_id}"}
         case PaymentGateway.DUMMY_GATEWAY:
-            return {"redirect_url": f"{API_ENDPOINT}/checkout/dummy-payment?order_id={order.id}"}
+            return {"redirect_url": f"/api/checkout/dummy-payment?order_id={order.id}"}
         case PaymentGateway.STRIPE:
             # TODO: Implement Stripe payment
-            return {"redirect_url": f"{API_ENDPOINT}/checkout/stripe-payment?order_id={order.id}"}
+            return {"redirect_url": f"/api/checkout/stripe-payment?order_id={order.id}"}
 
 
 @router.get("/dummy-payment", status_code=302, dependencies=[Depends(oauth_check_dep), Depends(role_customer)])
@@ -200,7 +200,7 @@ async def dummy_payment(req: Request, order_id: ObjectId):
 
     reference_id = f"dummy|{uuid4()}"
 
-    redirect_url = f"{API_ENDPOINT}/checkout/callback?"
+    redirect_url = "/api/checkout/callback?"
     redirect_url += f"&order_id={order_id}"
     redirect_url += f"&payment_status=paid"
     redirect_url += f"&reference_id={reference_id}"

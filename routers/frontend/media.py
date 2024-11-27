@@ -11,7 +11,7 @@ from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
 from dependencies.roles import role_admin
-from globals import BLOB_CONTAINER_NAME, API_ENDPOINT, BLOB_CONNECTION_STRING
+from globals import BLOB_CONTAINER_NAME, BLOB_CONNECTION_STRING
 
 router = APIRouter(prefix="/media", tags=["media"])
 
@@ -42,9 +42,9 @@ async def upload_image(file: UploadFile = File(...)):
     try:
         blob_client = blob_service_client.get_blob_client(container=BLOB_CONTAINER_NAME, blob=file_name)
         blob_client.upload_blob(file.file)
-        return UploadResponse(filename=file_name, url=f"{API_ENDPOINT}/media/{file_name}")
+        return UploadResponse(filename=file_name, url=f"/api/media/{file_name}")
     except ResourceExistsError:
-        return UploadResponse(filename=file_name, url=f"{API_ENDPOINT}/media/{file_name}")
+        return UploadResponse(filename=file_name, url=f"/api/media/{file_name}")
     except Exception:
         raise HTTPException(status_code=500, detail="Failed to upload image")
 

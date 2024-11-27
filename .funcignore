@@ -1,11 +1,15 @@
 .vscode
 .idea
 
+venv/
 .venv/
 
 .git*
 **/*.pyc
 
+.env
 .env.example
 
 docs/
+
+local.settings.json

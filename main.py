@@ -17,14 +17,32 @@ async def lifespan(_: FastAPI):
     yield
 
 
-# app = FastAPI(debug=True, lifespan=lifespan)
-app = FastAPI(debug=True)
+app = FastAPI(
+    debug=False,
+    lifespan=lifespan,
+    root_path="/api",
+    redoc_url=None,
+)
+
+# region Catch all exceptions
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import PlainTextResponse
+
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request, exc):
+    return PlainTextResponse("", status_code=400)
+
+
+# endregion Catch all exceptions
+
+
 app.add_middleware(GZipMiddleware, minimum_size=1024, compresslevel=5)  # noqa
 app.include_router(auth.router)
 app.include_router(checkout.router)
 
 for router in (
-        product.router,order.router,review.router,category.router,
+        product.router, order.router, review.router, category.router,
         cart.router, account.router, shipping.router, address.router,
         media.router,
 ):
