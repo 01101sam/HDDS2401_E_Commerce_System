@@ -42,8 +42,7 @@ bun swa:deploy
 1. Install [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli), do `az login` and `az upgrade` to
    ensure you have the latest version.
 
-2. Install [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli), do `az login` and `az upgrade` to
-   ensure you have the latest version.
+2. Install [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=linux%2Ccsharp%2Cbash#v2).
 
 3. (Optional) Install Docker Desktop for later use.
 

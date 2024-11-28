@@ -2,10 +2,6 @@
 
 In this section, we will link the resources we created in the previous steps.
 
-> **Note**
->
-> Free plan is lack of most features, please use standard plan.
-
 ## Storage Account
 
 ### Obtain connection string
@@ -29,6 +25,10 @@ Type `images`
 ![img_4.png](img/step_1/img_4.png)
 
 ## Frontend
+
+> **Note**
+>
+> Free plan is lack of most features, please use standard plan.
 
 ### Obtain deployment token
 
