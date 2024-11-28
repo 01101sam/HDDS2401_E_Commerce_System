@@ -101,3 +101,55 @@ Enter the frontend URL in the browser.
 Enter the frontend URL + `/api/docs` to access API documentation.
 
 ![img_1.png](img/step_2/img_7.png)
+
+### Register a dummy account
+
+![img.png](img/step_2/img_8.png)
+\
+![img_1.png](img/step_2/img_9.png)
+
+### Login
+
+![img_2.png](img/step_2/img_10.png)
+\
+![img_3.png](img/step_2/img_11.png)
+
+### Verify in Azure Portal
+
+Go to `mdb` -> `Data Explorer`.
+
+Select `user` -> `Documents`.
+
+![img_4.png](img/step_2/img_12.png)
+
+### Upload media
+
+Go back to api docs and register an admin account using your own email and password.
+
+Then, add role `admin`
+
+![img_5.png](img/step_2/img_13.png)
+
+When done, click `Update`
+
+Now login, and save your access token.
+
+Open [Postman](https://www.postman.com/downloads/), download if you haven't.
+
+Create a new request, set the method to `POST`, and enter the URL.
+
+Go to tab `Authorization`, select `Bearer Token`, and paste the access token.
+
+![img_6.png](img/step_2/img_14.png)
+
+Go to tab `Body`, select `form-data`, and enter the key as `file` and select a file.
+
+![img_7.png](img/step_2/img_15.png)
+
+You should see your response.
+
+![img_8.png](img/step_2/img_16.png)
+
+Click on the path, and copy your authorization token to new reqeust.
+
+![img_9.png](img/step_2/img_17.png)
