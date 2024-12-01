@@ -86,6 +86,10 @@ At `Private endpoint`, Click `+ Add`
 
 ![img_10.png](img/step_0/img_10.png)
 
+- **Private endpoint name**: `mdb-priv-link`
+- **Virtual network**: `vnet`
+    - **Subnet**: `default`
+
 Deploy need a few minutes, please move on.
 
 ## Function App
@@ -118,6 +122,9 @@ Create a new subnet
 ![img_16.png](img/step_0/img_16.png)
 
 - **Subnet Name**: `backend-api-sn`
+- **Storage public network access**: `Enable public access from all networks`
+- **Add private endpoint**: `off`
+
 
 Deploy need a few minutes, please move on.
 

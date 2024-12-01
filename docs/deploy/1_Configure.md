@@ -6,7 +6,7 @@ In this section, we will link the resources we created in the previous steps.
 
 ### Obtain connection string
 
-From `ecommedia`, go to `Settings` -> `Access keys`
+From `ecommedia`, go to `Security+networking` -> `Access keys`
 
 ![img_5.png](img/step_1/img_5.png)
 
@@ -92,9 +92,9 @@ From `backend-api`, go to `Settings` -> `Environment variables`
 
 ![img_9.png](img/step_1/img_9.png)
 
-You may see `.env.example.json` from the repository,
+You may see `.env.example.json` and `.env.example` from the repository,
 \
-copy the content and follow the instructions in `.env.example` to fill in the values.
+follow the instructions in `.env.example` to fill in the values and copy the content.
 
 After done, open `Advanced edit` and paste the content.
 \
