@@ -1,0 +1,309 @@
+[
+  {
+    "category_names": [
+      "Vegetable",
+      "Fruit"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "[Japan Direct] Fresh Tomato",
+    "price": 69.9,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-JP-TOMATO-1",
+    "status": "published",
+    "stock": 84,
+    "tags": [
+      "Japan",
+      "Tomato",
+      "Fresh"
+    ],
+    "thumbnail_url": "/api/media/2358c7da-0919-8b49-e11c-b9d9085cc1f2.png"
+  },
+  {
+    "category_names": [
+      "Fruit"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "[Japan Direct] Big Melon",
+    "price": 129.9,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-JP-MELON-1",
+    "status": "published",
+    "stock": 45,
+    "tags": [
+      "Japan",
+      "Melon",
+      "Fresh"
+    ],
+    "thumbnail_url": "/api/media/e657f47a-0f5b-12d1-6ad6-2961c2924e21.png"
+  },
+  {
+    "category_names": [
+      "Fruit"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "[Japan Direct] Juicy Sweet Peach",
+    "price": 99.9,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-JP-PEACH-1",
+    "status": "published",
+    "stock": 32,
+    "tags": [
+      "Japan",
+      "Peach"
+    ],
+    "thumbnail_url": "/api/media/b573c126-4b26-033e-84e4-76aa8bfed1a7.png"
+  },
+  {
+    "category_names": [
+      "Fruit"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "[Japan Direct] Premium Apple",
+    "price": 89.9,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-JP-APPLE-1",
+    "status": "published",
+    "stock": 23,
+    "tags": [
+      "Japan",
+      "Apple"
+    ],
+    "thumbnail_url": "/api/media/c4627794-ccc7-f82b-541c-c3f33aba34c3.png"
+  },
+  {
+    "category_names": [
+      "Fruit"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "[Japan Direct] Kumamoto Strawberry",
+    "price": 109.9,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-JP-STRAWBERRY-1",
+    "status": "published",
+    "stock": 59,
+    "tags": [
+      "Japan",
+      "Kumamoto",
+      "Strawberry"
+    ],
+    "thumbnail_url": "/api/media/d40b6d7e-428a-901a-d978-3fc9ab71a7a5.png"
+  },
+  {
+    "category_names": [
+      "Fruit"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "[Japan Direct] Premium Pear",
+    "price": 109.9,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-JP-PEAR-1",
+    "status": "published",
+    "stock": 5,
+    "tags": [
+      "Japan",
+      "Pear"
+    ],
+    "thumbnail_url": "/api/media/b507a0e4-4f44-8660-5dc7-ac68b42114b7.png"
+  },
+  {
+    "category_names": [
+      "Fruit"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "[Japan Direct] Ehime Mikan",
+    "price": 109.9,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-JP-MIKAN-1",
+    "status": "published",
+    "stock": 27,
+    "tags": [
+      "Japan",
+      "Mikan"
+    ],
+    "thumbnail_url": "/api/media/3e2ebffd-2512-409f-ef78-d82dba6552bd.png"
+  },
+  {
+    "category_names": [
+      "Toy"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "Toy Car",
+    "price": 19.9,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-TOY-CAR-1",
+    "status": "published",
+    "stock": 100,
+    "tags": [
+      "Toy",
+      "Car"
+    ],
+    "thumbnail_url": "/api/media/cc425973-09f4-b60d-8e19-437eebc6de37.webp"
+  },
+  {
+    "category_names": [
+      "Sauce"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "[Del Monte] Tomato Paste",
+    "price": 59.9,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-DELMONTE-TOMATO_PASTE-1",
+    "status": "published",
+    "stock": 500,
+    "tags": [
+      "Del Monte",
+      "Tomato Paste",
+      "Sauce"
+    ],
+    "thumbnail_url": "/api/media/dc77555b-24be-4c6a-572a-7a07e4d0d34c.jpeg"
+  },
+  {
+    "category_names": [
+      "Milk"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "[Local] Fresh Milk",
+    "price": 19.9,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-LOCAL-MILK-1",
+    "status": "published",
+    "stock": 3,
+    "tags": [
+      "Milk",
+      "Local",
+      "Fresh"
+    ],
+    "thumbnail_url": "/api/media/359d4101-03a5-efcb-ca6b-8ba2ceb1ec1b.webp"
+  },
+  {
+    "category_names": [
+      "Milk"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "Premium Galaxy Milk Pro Max Ultra 1L",
+    "price": 999.9,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-GALAXY-MILK-1",
+    "status": "published",
+    "stock": 3,
+    "tags": [
+      "Galaxy",
+      "Milk",
+      "Premium"
+    ],
+    "thumbnail_url": "/api/media/b458547e-f361-6429-fa94-678f3b1f0261.webp"
+  },
+  {
+    "category_names": [
+      "Air"
+    ],
+    "description_html": null,
+    "media_url": null,
+    "name": "Premium Air",
+    "price": 0.0,
+    "rating": {
+      "average": 5,
+      "one_star_count": 0,
+      "two_star_count": 0,
+      "three_star_count": 0,
+      "four_star_count": 0,
+      "five_star_count": 0
+    },
+    "sku": "E-EMPTY-AIR-1",
+    "status": "published",
+    "stock": 3,
+    "tags": [
+      "Air",
+      "Premium"
+    ],
+    "thumbnail_url": "/api/media/d41d8cd9-8f00-b204-e980-0998ecf8427e.webp"
+  }
+]
