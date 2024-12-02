@@ -10,6 +10,7 @@ from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
+from dependencies.oauth import oauth_check_dep
 from dependencies.roles import role_admin
 from globals import BLOB_CONTAINER_NAME, BLOB_CONNECTION_STRING
 
@@ -29,7 +30,7 @@ class UploadResponse(BaseModel):
     url: str
 
 
-@router.post("/upload", response_model=UploadResponse, dependencies=[Depends(role_admin)])
+@router.post("/upload", response_model=UploadResponse, dependencies=[Depends(oauth_check_dep), Depends(role_admin)])
 async def upload_image(file: UploadFile = File(...)):
     file_ext = get_file_extension(file.filename)
 
