@@ -71,16 +71,16 @@ Deploy need a few minutes, please move on.
 
 ![img_7.png](img/step_0/img_7.png)
 
-- **Resource**: `Request unit (RU) database account`
+- **Resource**: `vCore cluster`
 
-![img_8.png](img/step_0/img_8.png)
+![img.png](img.png)
 
-- **Account name**: `mdb`
-- **Capacity mode**: `Serverless`
+- **Cluster name**: `mdb`
+- **Cluster tier**: `M25 tier, 2 (Burstable) vCores, 32 GB`
 
-![img_9.png](img/step_0/img_9.png)
+![img_1.png](img_1.png)
 
-- **Allow Public Network Access**: `Deny`
+- **Connectivity method**: `Private access`
 
 At `Private endpoint`, Click `+ Add`
 

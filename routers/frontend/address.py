@@ -4,7 +4,7 @@ from fastapi import APIRouter, HTTPException, Request
 from odmantic import ObjectId
 from pydantic import BaseModel
 
-from globals import engine
+from globals import engine, DEBUG
 from models import Address
 
 router = APIRouter(prefix="/address", tags=["address"])
@@ -28,10 +28,14 @@ async def create_address(address: AddressModel, req: Request):
 @router.get("", response_model=List[Address])
 async def read_addresses(req: Request):
     user = req.state.user
-    addresses = await engine.find(Address, Address.user == user.id)
-    for address in addresses:
-        del address.user
-    return addresses
+    try:
+        addresses = await engine.find(Address, Address.user == user.id)
+        for address in addresses:
+            del address.user
+        return addresses
+    except Exception:  # noqa
+        import traceback
+        raise HTTPException(status_code=500, detail=traceback.format_exc() if DEBUG else "Internal server error")
 
 
 @router.get("/{address_id}", response_model=Address)

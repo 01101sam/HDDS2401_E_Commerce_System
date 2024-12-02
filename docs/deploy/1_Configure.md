@@ -64,16 +64,6 @@ From `mdb`, go to `Settings` -> `Connection string`
 
 Note down `Primary connection string`, we will use it later.
 
-### Create collection
-
-Go to `Data Explorer` -> `New Collection`
-
-![img_7.png](img/step_1/img_7.png)
-
-- **Database id**: `ecom_db`
-- **Collection id**: `user`
-- **Sharding**: `Unsharded (20GB limit)`
-
 ### Enable connection for Azure portal middleware
 
 Go to `Networking` (From `Settings`)
