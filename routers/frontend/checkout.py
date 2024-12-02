@@ -3,6 +3,7 @@ from typing import List
 from uuid import uuid4
 
 from fastapi import APIRouter, HTTPException, Request, Depends
+from fastapi.responses import HTMLResponse
 from odmantic import ObjectId
 from pydantic import BaseModel
 
@@ -10,7 +11,7 @@ from dependencies.oauth import oauth_check_dep
 from dependencies.roles import role_customer
 from globals import engine
 from models import (Cart, CartItem, Payment, PaymentGateway, PaymentStatus, Order, OrderStatus, OrderItem,
-                    Address, Product, ProductStatus)
+                    Address, Product, ProductStatus, User)
 
 router = APIRouter(prefix="/checkout", tags=["checkout"])
 
@@ -165,6 +166,9 @@ async def create_payment(
     order.payments.append(payment)
     await engine.save(order)
 
+    params = f"order_id={order.id}"
+    params += f"&user_id={user.id}"
+
     # Redirect based on payment gateway
     match gateway:
         case PaymentGateway.FREE:
@@ -175,16 +179,20 @@ async def create_payment(
             await engine.save(order)
             return {"redirect_url": f"/api/order/{cart_id}"}
         case PaymentGateway.DUMMY_GATEWAY:
-            return {"redirect_url": f"/api/checkout/dummy-payment?order_id={order.id}"}
+            return {"redirect_url": f"/api/checkout/dummy-payment?{params}"}
         case PaymentGateway.STRIPE:
-            # TODO: Implement Stripe payment
-            return {"redirect_url": f"/api/checkout/stripe-payment?order_id={order.id}"}
+            # Feature: Implement Stripe payment
+            return {"redirect_url": f"/api/checkout/dummy-payment?{params}"}
 
 
-@router.get("/dummy-payment", status_code=302, dependencies=[Depends(oauth_check_dep), Depends(role_customer)])
-async def dummy_payment(req: Request, order_id: ObjectId):
+@router.get("/dummy-payment", status_code=302)
+async def dummy_payment(order_id: ObjectId, user_id: ObjectId):
     # Build a dummy payment page
-    user = req.state.user
+    user = await engine.find_one(User, User.id == user_id)
+
+    if not user:
+        raise HTTPException(status_code=404, detail="Order not found")
+
     order = await engine.find_one(
         Order,
         Order.id == order_id,
@@ -205,10 +213,24 @@ async def dummy_payment(req: Request, order_id: ObjectId):
     redirect_url += f"&payment_status=paid"
     redirect_url += f"&reference_id={reference_id}"
 
-    raise HTTPException(status_code=302, headers={"Location": redirect_url})
+    dummy_page = f"""<html>
+    <head>
+        <title>Dummy Payment</title>
+    </head>
+    <body>
+        <h1>Dummy Payment</h1>
+        <h2>Payment Gateway</h2>
+        <p>Order ID: {order_id}</p>
+        <p>Reference ID: {reference_id}</p>
+        <p>Amount: {order.total_amount}</p>    
+        <a href="{redirect_url}">Pay Now</a>
+    </body>
+</html>"""
+
+    return HTMLResponse(content=dummy_page)
 
 
-@router.get("/callback", status_code=204)
+@router.get("/callback", status_code=302)
 async def payment_callback(
         order_id: ObjectId,
         payment_status: PaymentStatus,
@@ -233,3 +255,5 @@ async def payment_callback(
     last_payment.status = PaymentStatus.FAILED if payment_status != PaymentStatus.PAID else PaymentStatus.PAID
     last_payment.reference_id = reference_id
     await engine.save(order)
+
+    raise HTTPException(status_code=302, headers={"Location": "/orders"})

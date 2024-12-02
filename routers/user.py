@@ -7,7 +7,7 @@ from typing_extensions import Optional
 
 from dependencies.oauth import get_password_hash
 from globals import engine
-from models import User
+from models import User, Cart, Address, Order
 
 router = APIRouter(prefix="/users", tags=["users"])
 
@@ -78,4 +78,25 @@ async def delete_user(user_id: ObjectId):
     user = await engine.find_one(User, User.id == user_id)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
+
+    # Before deleting user, clear all references to user
+
+    # Cart
+    cart = await engine.find(Cart, Cart.user == user.id)
+    for cart in cart:
+        await engine.delete(cart)
+
+    # Addresses
+    addresses = await engine.find(Address, Address.user == user.id)
+    for address in addresses:
+        await engine.delete(address)
+
+    # Orders
+    orders = await engine.find(Order, Order.user == user.id)
+    for order in orders:
+        await engine.delete(order)
+
+    # Reviews
+    # Feature: Review should be deleted by endpoint /reviews/{review_id} for re-calculating average rating
+
     await engine.delete(user)

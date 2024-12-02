@@ -1,12 +1,11 @@
 import datetime
-from decimal import Decimal
 from enum import Enum
 from typing import Optional, List
 
 from odmantic import EmbeddedModel, Reference
 from odmantic import Field, Model
 from odmantic.bson import ObjectId
-from pydantic import EmailStr, condecimal
+from pydantic import EmailStr
 
 from globals import engine
 
@@ -54,7 +53,6 @@ class Address(Model):
 
 class Category(Model):
     name: str = Field(unique=True)
-    logo_id: Optional[str] = None
 
     product_ids: List[ObjectId] = Field(default=[])
 
@@ -84,7 +82,7 @@ class Product(Model):
 
     category_names: List[str]
 
-    price: condecimal = Field(default=Decimal('0.00'), ge=0)
+    price: float = Field(default=float('0.00'), ge=0)
     # A.K.A Keywords
     tags: List[str] = Field(default=[])
 
@@ -151,7 +149,7 @@ class PaymentStatus(str, Enum):
 
 class Payment(EmbeddedModel):
     # Feature: Add expire timer
-    amount: condecimal = Field(default=Decimal('0.00'), ge=0)
+    amount: float = Field(default=float('0.00'), ge=0)
 
     gateway: PaymentGateway
     reference_id: Optional[str] = None
@@ -202,7 +200,7 @@ class Order(Model):
     address: Address = Reference()
 
     items: List[OrderItem] = Field(default=[])
-    total_amount: condecimal = Field(default=Decimal('0.00'), ge=0)
+    total_amount: float = Field(default=float('0.00'), ge=0)
     # Not for each item, it's for the whole order, this is just payment history
     payments: List[Payment] = Field(default=[])
     shipping: Shipping = Field(default_factory=Shipping)

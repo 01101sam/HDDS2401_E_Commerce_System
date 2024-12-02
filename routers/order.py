@@ -28,7 +28,7 @@ async def read_all_orders():
     orders = await engine.find(Order)
 
     for order in orders:
-        del order.user
+        del order.user.password_hash
         del order.address.user
 
     return orders

@@ -3,6 +3,7 @@ from typing import List
 
 from fastapi import APIRouter, HTTPException, Depends, Request
 from odmantic.exceptions import DuplicateKeyError
+from pydantic import BaseModel
 
 from dependencies.roles import role_admin
 from globals import engine
@@ -11,10 +12,26 @@ from models import Category, Product, ProductStatus
 router = APIRouter(prefix="/categories", tags=["categories"])
 
 
+class CategoryCreate(BaseModel):
+    name: str
+
+
+# Read all categories
+@router.get("", response_model=List[Category])
+async def read_categories():
+    categories = await engine.find(Category)
+
+    for category in categories:
+        del category.product_ids
+
+    return categories
+
 # Create a new category
 @router.post("", status_code=201, dependencies=[Depends(role_admin)])
-async def create_category(category: Category):
+async def create_category(request: CategoryCreate):
     try:
+        category = Category(name=request.name)
+
         await engine.save(category)
     except DuplicateKeyError:
         raise HTTPException(status_code=400, detail="Category already exists")
@@ -27,13 +44,6 @@ async def read_category(category_name: str):
     if not category:
         raise HTTPException(status_code=404, detail="Category not found")
     return category
-
-
-# Read all categories
-@router.get("", response_model=List[Category])
-async def read_categories():
-    return await engine.find(Category)
-
 
 @router.get("/{category_name}/products", response_model=List[Product])
 async def list_category_products(category_name: str, req: Request):
