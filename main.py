@@ -38,13 +38,13 @@ async def validation_exception_handler(request, exc):
 
 
 app.add_middleware(GZipMiddleware, minimum_size=1024, compresslevel=5)  # noqa
+app.include_router(media.router)
 app.include_router(auth.router)
 app.include_router(checkout.router)
 
 for router in (
         product.router, order.router, review.router, category.router,
         cart.router, account.router, shipping.router, address.router,
-        media.router,
 ):
     app.include_router(router, dependencies=[Depends(oauth_check_dep), Depends(role_customer)])
 
