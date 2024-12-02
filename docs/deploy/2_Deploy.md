@@ -7,7 +7,7 @@
 1. Install [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli), do `az login` and `az upgrade` to
    ensure you have the latest version.
 
-2. Install [Bun.JS](https://bun.js). An engine that's faster and better than `Deno` and `Node.js`.
+2. Install [Bun.SH](https://bun.SH). An engine that's faster and better than `Deno` and `Node.js`.
 
 3. Your `deployment token` from [Obtain deployment token](1_Configure.md#obtain-deployment-token).
 
